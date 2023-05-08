@@ -17,7 +17,7 @@ export class DataService {
 
   saveData(newData: Data): void {
     const data = this.getData();
-    newData.id = data.length + 1;
+    newData.id = data.length ? data.length + 1 : 1;
     data.push(newData);
     sessionStorage.setItem('data', JSON.stringify(data));
   }
