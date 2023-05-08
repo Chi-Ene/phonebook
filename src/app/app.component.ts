@@ -43,19 +43,17 @@ export class AppComponent {
   onSubmit() {
     const data: Data = { ...this.addForm.value};
 
-    // if (this.actionTitle === 'Edit Contact') {
-    //   console.log('testing', data);
-    //   this.dataService.saveData(data);
-    //   this.data = this.dataService.getData();
-    // } else {
-    //   this.dataService.updateData(data);
-    //   console.log('edit', data);
-    //   this.data = this.dataService.getData();
-    // }
-    console.log('testing', data);
-    this.dataService.saveData(data);
-    this.data = this.dataService.getData();
+    if (this.actionTitle === 'Add Contact') {
+      console.log('testing', data);
+      this.dataService.saveData(data);
+      this.data = this.dataService.getData();
+    } else {
+      this.dataService.updateData(data);
+      console.log('edit', data);
+      this.data = this.dataService.getData();
+    }
     this.addForm.reset();
+    this.actionTitle = 'Add Contact';
   }
 
   deleteItem(id) {
