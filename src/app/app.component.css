@@ -2,8 +2,6 @@
   margin: 0 auto;
 }
 
-/* button {
-  width: fit-content;
-  display: flex;
-} */
-
+.material-icons {
+  cursor: pointer;
+}
